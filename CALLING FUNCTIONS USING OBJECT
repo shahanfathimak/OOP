@@ -1,0 +1,23 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class smartphone{
+    public:
+    string modelName;
+    int price;
+    void phoneDetails(){
+  cout<<"phone model:"<<modelName<<endl;
+  cout<<"phone price:"<<price<<endl;
+
+    }
+};
+int main() {
+ smartphone phone1,phone2;
+ phone1.modelName="iphone 12";
+ phone1.price=20000;
+ phone2.modelName="samsung";
+ phone2.price=10000;
+ phone1.phoneDetails();
+phone2.phoneDetails();
+    return 0;
+}
