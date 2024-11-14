@@ -1,0 +1,26 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class googleSearch{
+    private:
+    string searchText;
+     string searchResult;
+       private:
+       void searchProcess(){
+           searchResult="result about "+searchText;
+           cout<< searchResult;
+       }
+    public:
+    void search(string text){
+           searchText=text;
+           searchProcess();
+       }
+  
+};
+
+
+int main() {
+  googleSearch g;
+  g.search("INDIA");
+    return 0;
+}
