@@ -1,0 +1,107 @@
+#include <iostream>
+using namespace std;
+
+class room {
+private:
+    string type;
+    int price;
+    int roomNo;
+    bool availability;
+
+public:
+    
+    room(string t = "Standard", int n = 0, int p = 500, bool avail = true) {
+        type = t;
+        roomNo = n;
+        price = p;
+        availability = avail;
+    }
+
+    
+    void settype(string t) { type = t; }
+    void setroomNo(int n) { roomNo = n; }
+    void setprice(int p) { price = p; }
+    void setAvailability(bool avail) { availability = avail; }
+
+
+    int getprice() { return price; }
+    int getroomNo() { return roomNo; }
+    string gettype() { return type; }
+    bool getAvailability() { return availability; }
+
+   
+    void displayDetails() {
+        cout << "Room Type: " << type << endl;
+        cout << "Room Number: " << roomNo << endl;
+        cout << "Room Price: " << price << endl;
+        cout << "Room Availability: " << (availability ? "Available" : "Not Available") << endl;
+    }
+};
+
+
+class singleroom : public room {
+public:
+    
+    singleroom(int roomNo) : room("Single", roomNo, 500, true) {}
+};
+
+
+class doubleroom : public room {
+public:
+   
+    doubleroom(int roomNo) : room("Double", roomNo, 800, true) {}
+};
+
+
+class suite : public room {
+public:
+    
+    suite(int roomNo) : room("Suite", roomNo, 1200, true) {}
+};
+
+int main() {
+    
+    cout << "** DEAR CUSTOMERS, OUR HOTEL HAS A TOTAL OF 200 ROOMS **" << endl;
+    cout << "** Number of available rooms: 150 **" << endl;
+    cout << "** Available room types: Single, Double, Suite **" << endl;
+    cout << "Price of Single Room: 500/- per day" << endl;
+    cout << "Price of Double Room: 800/- per day" << endl;
+    cout << "Price of Suite: 1200/- per day" << endl;
+
+    
+    singleroom room1(101);  
+    doubleroom room2(102); 
+    suite room3(103);       
+    singleroom room4(104);  
+
+    
+    cout << "\nDisplaying Room Details:\n";
+    room1.displayDetails();
+    cout << "----------------------------" << endl;
+    room2.displayDetails();
+    cout << "----------------------------" << endl;
+    room3.displayDetails();
+    cout << "----------------------------" << endl;
+    room4.displayDetails();
+    cout << "----------------------------" << endl;
+
+    
+    cout << "\nBooking Room 102 (Double Room)...\n";
+    room2.setAvailability(false); 
+    room2.displayDetails();
+
+   
+    cout << "\nAttempting to book Room 102 again...\n";
+    if (!room2.getAvailability()) {
+        cout << "Room 102 is already booked!" << endl;
+    }
+
+   
+    cout << "\nFinal Room Status:\n";
+    room1.displayDetails();
+    room2.displayDetails();
+    room3.displayDetails();
+    room4.displayDetails();
+
+    return 0;
+}
