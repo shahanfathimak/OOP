@@ -1,0 +1,10 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main(){
+ofstream myfile("sample.txt");
+myfile<<"learn c++ programming";
+myfile.close();
+
+return 0;
+}
