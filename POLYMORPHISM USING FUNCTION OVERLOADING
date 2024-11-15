@@ -1,0 +1,35 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class India{
+    public:
+    void  speak(){
+        cout<<"I can speak Indian language"<<endl;
+    }
+};
+class Tamilnadu:public India{
+     public:
+    void  speak(){
+        cout<<"I can speak tamil"<<endl;
+    }
+};
+class kerala:public India{
+     public:
+    void  speak(){
+        cout<<"I can speak malayalam"<<endl;
+    }
+};
+class Delhi:public India{
+     public:
+    void  speak(){
+        cout<<"I can speak hindi"<<endl;
+    }
+};
+int main() {
+India I1;
+Tamilnadu T1;
+kerala K1;
+Delhi D1;
+K1.speak();
+    return 0;
+}
