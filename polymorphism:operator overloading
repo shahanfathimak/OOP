@@ -1,0 +1,23 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class object{
+  private:
+  int a;
+  public:
+  object(){
+      a=5;
+  }
+  void operator++(){
+      a=a+5;
+  }
+   void print(){
+      cout<<a<<endl;
+  }
+};
+int main() {
+object obj1;
+++obj1;
+obj1.print();
+    return 0;
+}
